@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "reports": [
+    {
+      "id": "2026-06-22",
+      "weekStart": "2026-06-22",
+      "weekEnd": "2026-06-28",
+      "dateLabel": "June 22 – June 28, 2026",
+      "projects": "iOS Application Development & SNCC",
+      "sections": [],
+      "upcomingTasks": [],
+      "targetColumnLabel": "Project",
+      "attachedReports": [],
+      "createdAt": "2026-06-23T20:25:00.646Z",
+      "polishedAt": null
+    }
+  ]
+}
