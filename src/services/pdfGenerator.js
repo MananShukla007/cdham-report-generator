@@ -2,6 +2,7 @@
  * PDF Generator — reproduces the exact layout of the sample weekly reports,
  * with support for inline markdown tables and **bold** text in body content.
  */
+import { jsPDF } from 'jspdf'
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 const PW = 215.9, PH = 279.4
@@ -501,7 +502,6 @@ function drawTasksTable(doc, tasks, targetLabel, startY, tmpl, dateLabel, pageRe
 
 // ── Main export ────────────────────────────────────────────────────────────────
 export async function generatePDF(report, template) {
-  const { default: jsPDF } = await import('jspdf')
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'letter' })
   const pageRef = { page: 1 }
   const tmpl = template || {}
