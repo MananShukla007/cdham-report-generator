@@ -7,12 +7,63 @@
       "weekEnd": "2026-06-28",
       "dateLabel": "June 22 – June 28, 2026",
       "projects": "iOS Application Development & SNCC",
-      "sections": [],
-      "upcomingTasks": [],
+      "sections": [
+        {
+          "id": "id_1782248526823_y3pmowjzqh",
+          "title": "Employ210 Updates",
+          "body": "This week, significant progress was made on the **Employ210** application, focusing on enhancing the **SOP/custom instruction grounding feature**. This feature allows users to input instructions or upload a PDF, which the **HTA generator** uses to align every step with the provided SOP throughout the generation process.\n\nKey Achievements:\n- The **AWS Lambda** backend was updated to incorporate the **custom_instructions** field into the pipeline while maintaining the existing 3-pass structure.\n- A **maintenance mode toggle** was added to improve system management.\n- A **FEATURE_SPEC.md** document was created for **Claude Code** to standardize feature specifications.\n- A full cinematic product explainer **HTML animation** was developed, showcasing the end-to-end **HTA flow** with **AWS Lambda** branding.",
+          "rawNotes": "3:08 PMClaude responded: Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator…Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator keeps in mind throughout the entire generation process, aligning every step with the provided SOP. The AWS Lambda backend was updated to thread the custom_instructions field through the pipeline without changing the existing 3-pass structure. On top of that, a maintenance mode toggle was added, a FEATURE_SPEC.md was created for Claude Code, and a full cinematic product explainer HTML animation was built showing the end-to-end HTA flow with AWS Lambda branding."
+        },
+        {
+          "id": "id_1782248529627_6ueskyxkxx6",
+          "title": "S&CC Updates",
+          "body": "Significant progress was made on the **SNCC** project this week, focusing on both a research paper and a grant application.\n\nKey Achievements:\n- A full **IEEE-format paper draft** was developed, targeting the **IEEE Journal of Biomedical and Health Informatics**. During this process, a data integrity issue was identified, resulting in a verified accuracy of **75.3%** with a **kappa** of **0.60**. This was a decrease from the earlier **90%** figure, likely due to a change in the **Gemini model version**.\n\nIssues Identified & Fixed:\n- The data integrity issue was addressed, and the impact of the **Gemini model version** change was analyzed.\n\nGrant Application Review:\n- **Katie's** grant proposal for **SNCC** was reviewed. A feedback PDF was drafted, highlighting gaps in the technical narrative and suggesting enhancements.\n\nTechnology Highlights for Proposal:\n| Technology Highlight       | Description                                |\n|----------------------------|--------------------------------------------|\n| **Streamformer**           | A key technology to be emphasized          |\n| **LoRA**                   | Suggested for inclusion in the proposal    |\n| **Hybrid Gemini Pipeline** | Recommended for strengthening the proposal |\n| **Multimodal Grounding**   | Highlighted as a significant feature       |\n| **RLHF Feedback Loop**     | Proposed as a critical component           |\n\nThese highlights were recommended to strengthen the proposal for reviewers.",
+          "rawNotes": "SNCC: The main work this week was on the research paper and the grant application. A full IEEE-format paper draft was built targeting IEEE Journal of Biomedical and Health Informatics, working through a data integrity issue where the verified accuracy landed at 75.3% with kappa 0.60 (rather than the earlier 90% figure, likely due to a Gemini model version change). Katie's grant proposal for SNCC was also reviewed, with a feedback PDF drafted covering gaps in the technical narrative and five key technology highlights (Streamformer, LoRA, hybrid Gemini pipeline, multimodal grounding, RLHF feedback loop) she could use to strengthen the proposal for reviewers."
+        }
+      ],
+      "upcomingTasks": [
+        {
+          "id": "id_1782248739522_k76vucc69dr",
+          "priority": "High",
+          "task": "Finish updating the AWS Lambda backend to fully support SOP-grounded HTA generation end to end",
+          "target": "employ210"
+        },
+        {
+          "id": "id_1782248740033_e5yzivqlbv",
+          "priority": "High",
+          "task": "  Recover or re-run the original 90% accuracy evaluation to resolve the data integrity discrepancy",
+          "target": "sncc"
+        },
+        {
+          "id": "id_1782248740518_4h2n0multze",
+          "priority": "Medium",
+          "task": " Test the custom instruction grounding flow (PDF upload + typed text) with real HTA outputs",
+          "target": "employ210"
+        },
+        {
+          "id": "id_1782248740745_2vg1pu24hcy",
+          "priority": "Medium",
+          "task": "Finalize the IEEE paper with verified accuracy metrics and submit to IEEE Journal of Biomedical and Health Informatics",
+          "target": "sncc"
+        },
+        {
+          "id": "id_1782248741411_xnw9nwln9oc",
+          "priority": "Medium",
+          "task": "Deploy and validate the maintenance mode toggle in production",
+          "target": "employ210"
+        },
+        {
+          "id": "id_1782248765497_b0ok2w01yx",
+          "priority": "Medium",
+          "task": "Katie to share the revised grant proposal with Dr. Alaeddini after incorporating the technical feedback",
+          "target": "sncc"
+        }
+      ],
       "targetColumnLabel": "Project",
       "attachedReports": [],
-      "createdAt": "2026-06-23T20:25:00.646Z",
-      "polishedAt": null
+      "createdAt": "2026-06-23T21:19:30.763Z",
+      "polishedAt": "2026-06-23T21:19:30.763Z",
+      "updatedAt": "2026-06-23T21:19:31.026Z"
     }
   ]
 }
