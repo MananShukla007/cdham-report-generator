@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { fetchReports, deleteReport } from '../services/github'
+import { fetchReports, deleteReport, saveReport } from '../services/github'
+import { importAllSampleReports } from '../services/pdfParser'
 
 export default function HistoryPanel({ onLoad, onNewReport }) {
   const { reports, setReports, setView, setError, clearError } = useApp()
-  const [loading,   setLoading]   = useState(false)
-  const [deleting,  setDeleting]  = useState(null)
-  const [expanded,  setExpanded]  = useState(null)
+  const [loading,    setLoading]    = useState(false)
+  const [deleting,   setDeleting]   = useState(null)
+  const [expanded,   setExpanded]   = useState(null)
+  const [importing,  setImporting]  = useState(false)
+  const [importMsg,  setImportMsg]  = useState('')
 
   async function refresh() {
     clearError()
@@ -21,6 +24,26 @@ export default function HistoryPanel({ onLoad, onNewReport }) {
   }
 
   useEffect(() => { refresh() }, [])
+
+  async function handleImportSamples() {
+    clearError()
+    setImporting(true)
+    setImportMsg('Reading sample PDFs…')
+    try {
+      const parsed = await importAllSampleReports(msg => setImportMsg(msg))
+      if (!parsed.length) { setError('No sample PDFs found in /sample-reports/'); setImporting(false); return }
+      setImportMsg(`Saving ${parsed.length} report(s) to GitHub…`)
+      let latest = reports
+      for (const report of parsed) {
+        latest = await saveReport(report)
+      }
+      setReports(latest)
+      setImportMsg('')
+    } catch (e) {
+      setError(`Import error: ${e.message}`)
+    }
+    setImporting(false)
+  }
 
   async function handleDelete(id) {
     if (!confirm(`Delete report for week of ${id}?`)) return
@@ -42,21 +65,36 @@ export default function HistoryPanel({ onLoad, onNewReport }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="section-card flex items-center justify-between">
-        <h2 className="font-bold text-navy-900 text-lg">Report History</h2>
-        <div className="flex gap-2">
-          <button className="btn-secondary text-sm" onClick={refresh} disabled={loading}>
-            {loading ? 'Loading…' : 'Refresh'}
+      <div className="section-card">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="font-bold text-navy-900 text-lg">Report History</h2>
+          <div className="flex gap-2">
+            <button className="btn-secondary text-sm" onClick={refresh} disabled={loading}>
+              {loading ? 'Loading…' : 'Refresh'}
+            </button>
+            <button className="btn-primary text-sm" onClick={onNewReport ?? (() => setView('form'))}>
+              New Report
+            </button>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
+          <button
+            className="btn-secondary text-xs"
+            onClick={handleImportSamples}
+            disabled={importing}
+          >
+            {importing ? importMsg || 'Importing…' : '↑ Import Sample PDFs'}
           </button>
-          <button className="btn-primary text-sm" onClick={onNewReport ?? (() => setView('form'))}>
-            New Report
-          </button>
+          <p className="text-xs text-gray-400">
+            Import reports from <code className="bg-gray-100 px-1 rounded">public/sample-reports/</code> into history
+          </p>
         </div>
       </div>
 
       {reports.length === 0 && !loading && (
-        <div className="section-card text-center text-gray-400 py-10 text-sm">
-          No saved reports yet. Create and save your first report.
+        <div className="section-card text-center text-gray-400 py-10 text-sm space-y-2">
+          <p>No saved reports yet.</p>
+          <p>Click <strong className="text-navy-600">↑ Import Sample PDFs</strong> above to import your existing reports, or create a new one.</p>
         </div>
       )}
 
