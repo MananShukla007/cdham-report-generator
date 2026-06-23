@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { fetchReports, deleteReport } from '../services/github'
 
-export default function HistoryPanel({ onLoad }) {
+export default function HistoryPanel({ onLoad, onNewReport }) {
   const { reports, setReports, setView, setError, clearError } = useApp()
   const [loading,   setLoading]   = useState(false)
   const [deleting,  setDeleting]  = useState(null)
@@ -48,7 +48,7 @@ export default function HistoryPanel({ onLoad }) {
           <button className="btn-secondary text-sm" onClick={refresh} disabled={loading}>
             {loading ? 'Loading…' : 'Refresh'}
           </button>
-          <button className="btn-primary text-sm" onClick={() => setView('form')}>
+          <button className="btn-primary text-sm" onClick={onNewReport ?? (() => setView('form'))}>
             New Report
           </button>
         </div>
