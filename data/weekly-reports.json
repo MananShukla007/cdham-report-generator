@@ -5,14 +5,14 @@
       "id": "2026-06-22",
       "weekStart": "2026-06-22",
       "weekEnd": "2026-06-28",
-      "dateLabel": "June 22 – June 28, 2026",
+      "dateLabel": "June 22 â June 28, 2026",
       "projects": "iOS Application Development & SNCC",
       "sections": [
         {
           "id": "id_1782248526823_y3pmowjzqh",
           "title": "Employ210 Updates",
           "body": "This week, significant progress was made on the **Employ210** application, focusing on enhancing the **SOP/custom instruction grounding feature**. This feature allows users to input instructions or upload a PDF, which the **HTA generator** uses to align every step with the provided SOP throughout the generation process.\n\nKey Achievements:\n- The **AWS Lambda** backend was updated to incorporate the **custom_instructions** field into the pipeline while maintaining the existing 3-pass structure.\n- A **maintenance mode toggle** was added to improve system management.\n- A **FEATURE_SPEC.md** document was created for **Claude Code** to standardize feature specifications.\n- A full cinematic product explainer **HTML animation** was developed, showcasing the end-to-end **HTA flow** with **AWS Lambda** branding.",
-          "rawNotes": "3:08 PMClaude responded: Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator…Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator keeps in mind throughout the entire generation process, aligning every step with the provided SOP. The AWS Lambda backend was updated to thread the custom_instructions field through the pipeline without changing the existing 3-pass structure. On top of that, a maintenance mode toggle was added, a FEATURE_SPEC.md was created for Claude Code, and a full cinematic product explainer HTML animation was built showing the end-to-end HTA flow with AWS Lambda branding."
+          "rawNotes": "3:08 PMîî¤îî»Claude responded: Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generatorâ¦Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator keeps in mind throughout the entire generation process, aligning every step with the provided SOP. The AWS Lambda backend was updated to thread the custom_instructions field through the pipeline without changing the existing 3-pass structure. On top of that, a maintenance mode toggle was added, a FEATURE_SPEC.md was created for Claude Code, and a full cinematic product explainer HTML animation was built showing the end-to-end HTA flow with AWS Lambda branding."
         },
         {
           "id": "id_1782248529627_6ueskyxkxx6",
@@ -64,6 +64,75 @@
       "createdAt": "2026-06-23T21:19:30.763Z",
       "polishedAt": "2026-06-23T21:19:30.763Z",
       "updatedAt": "2026-06-23T21:19:31.026Z"
+    },
+    {
+      "id": "2026-06-16",
+      "weekStart": "2026-06-16",
+      "weekEnd": "2026-06-23",
+      "dateLabel": "June 16 – June 23, 2026",
+      "projects": "iOS Application Development & SNCC",
+      "sections": [
+        {
+          "id": "id_1782310591927_is3xwyr3ytr",
+          "title": "Employ210 Updates",
+          "body": "Significant progress was made on the **Employ210** application, with a continued focus on the **SOP/custom instruction grounding feature**. This feature enables users to input instructions or upload a PDF, which the **HTA generator** uses to align every step with the provided SOP throughout the generation process.\n\nKey Achievements:\n\n- The **AWS Lambda** backend was updated to incorporate the **custom_instructions** field into the pipeline while maintaining the existing 3-pass structure.\n- A **maintenance mode toggle** was added to improve system management.\n- A **FEATURE_SPEC.md** document was created for **Claude Code**.\n- A full cinematic product explainer **HTML animation** was developed, showcasing the end-to-end **HTA flow** with **AWS Lambda** branding.",
+          "rawNotes": "Employ210: This week the main focus was the SOP/custom instruction grounding feature, which lets users type instructions or upload a PDF that the HTA generator keeps in mind throughout the entire generation process, aligning every step with the provided SOP. The AWS Lambda backend was updated to thread the custom_instructions field through the pipeline without changing the existing 3-pass structure. On top of that, a maintenance mode toggle was added, a FEATURE_SPEC.md was created for Claude Code, and a full cinematic product explainer HTML animation was built showing the end-to-end HTA flow with AWS Lambda branding."
+        },
+        {
+          "id": "id_1782311667116_9zivaubcc5g",
+          "title": "S&CC Updates",
+          "body": "Significant progress was made on the **SNCC** project this week, with a focus on both the research paper and the grant application.\n\nKey Achievements:\n- A full **IEEE-format paper draft** was developed, targeting the **IEEE Journal of Biomedical and Health Informatics**. During this process, a data integrity issue was identified, resulting in a verified accuracy of **75.3%** with a **kappa** of **0.60**. This was a decrease from the earlier **90%** figure, likely due to a change in the **Gemini model version**.\n\nGrant Application Review:\n- **Katie's** grant proposal for **SNCC** was reviewed. A feedback PDF was drafted, addressing gaps in the technical narrative and suggesting enhancements.\n\n| Key Technology Highlights | Description |\n|---------------------------|-------------|\n| **Streamformer**          | Advanced data processing model |\n| **LoRA**                  | Low-Rank Adaptation technique |\n| **Hybrid Gemini Pipeline**| Combines multiple data sources |\n| **Multimodal Grounding**  | Integrates various data modalities |\n| **RLHF Feedback Loop**    | Reinforcement Learning with Human Feedback |\n\nThese highlights were recommended for inclusion to strengthen the proposal for reviewers.",
+          "rawNotes": "SNCC: The main work this week was on the research paper and the grant application. A full IEEE-format paper draft was built targeting IEEE Journal of Biomedical and Health Informatics, working through a data integrity issue where the verified accuracy landed at 75.3% with kappa 0.60 (rather than the earlier 90% figure, likely due to a Gemini model version change). Katie's grant proposal for SNCC was also reviewed, with a feedback PDF drafted covering gaps in the technical narrative and five key technology highlights (Streamformer, LoRA, hybrid Gemini pipeline, multimodal grounding, RLHF feedback loop) she could use to strengthen the proposal for reviewers."
+        }
+      ],
+      "upcomingTasks": [
+        {
+          "id": "id_1782334436390_mcn5z6k7ms",
+          "priority": "High",
+          "task": "Finish updating the AWS Lambda backend to fully support SOP-grounded HTA generation end to end",
+          "target": "Employ210"
+        },
+        {
+          "id": "id_1782334442539_8h51gvz20s",
+          "priority": "Medium",
+          "task": "Test the custom instruction grounding flow (PDF upload + typed text) with real HTA outputs",
+          "target": "Employ210"
+        },
+        {
+          "id": "id_1782334442718_nckda5byjzp",
+          "priority": "Medium",
+          "task": "Deploy and validate the maintenance mode toggle in production",
+          "target": "Employ210"
+        },
+        {
+          "id": "id_1782334442880_yvu78kn74s",
+          "priority": "Low",
+          "task": "Build out the weekly progress report generator app on Vercel with GitHub as data store",
+          "target": "Employ210"
+        },
+        {
+          "id": "id_1782334443033_ddje4n0nb8u",
+          "priority": "High",
+          "task": "Recover or re-run the original 90% accuracy evaluation to resolve the data integrity discrepancy",
+          "target": "SNCC"
+        },
+        {
+          "id": "id_1782334502357_ovjhto4g2nc",
+          "priority": "Medium",
+          "task": "Finalize the IEEE paper with verified accuracy metrics and submit to IEEE Journal of Biomedical and Health Informatics",
+          "target": "SNCC"
+        },
+        {
+          "id": "id_1782334502879_kmq8hxi043o",
+          "priority": "Low",
+          "task": "Katie to share the revised grant proposal with Dr. Alaeddini after incorporating the technical feedback",
+          "target": "Sncc"
+        }
+      ],
+      "targetColumnLabel": "Project",
+      "attachedReports": [],
+      "createdAt": "2026-06-24T21:05:09.735Z",
+      "polishedAt": "2026-06-24T21:05:09.735Z"
     }
   ]
 }
